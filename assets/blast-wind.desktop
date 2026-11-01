@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Blast Wind
+Comment=Native Sega Saturn recompilation
+Exec=blastwind-launcher
+Icon=blast-wind
+Terminal=false
+Categories=Game;ArcadeGame;
+StartupWMClass=blastwind-launcher
