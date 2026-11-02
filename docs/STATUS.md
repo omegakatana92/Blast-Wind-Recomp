@@ -66,7 +66,9 @@ zip it describes).
 The Steam Deck candidate is:
 
 - `dist/Blast-Wind-v0.1.0-SteamDeck-x86_64.AppImage`
-- SHA-256: `c49cf807e8fb2bdfe1c74fd0952cfa4b71ac2661a15397c5ba35ab05f4c34175`
+
+Its SHA-256, and the zip’s, are in `dist/SHA256SUMS.txt` beside them (a package’s
+hash cannot be embedded in the package it describes).
 
 Built on Ubuntu 22.04 (glibc 2.35, GCC 11.4) with static SDL 3.4.16. The binaries'
 highest required glibc symbol is `GLIBC_2.34`; the AppImage bundles `libstdc++`,
