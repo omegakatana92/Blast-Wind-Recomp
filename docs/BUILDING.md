@@ -62,6 +62,16 @@ make -j"$(nproc)" launcher
 `make app` is the **macOS app bundle** target in satrecomp 0.2.0; it does not create
 a Linux AppImage. `tools/package_appimage.sh` builds the AppImage with `appimagetool`.
 
+The generated files are large; on a 7.6 GB WSL2 VM, `-j4` was OOM-killed while
+compiling `blocks_031.cpp`. `-j2` completes. If `make check` cannot execute
+`satrecomp/tools/check.sh` because the toolkit copy's execute bit is not set on a
+fresh non-Windows checkout, run it through the shell:
+
+```sh
+GAME=blastwind B=build/blastwind DISC="$DISC" sh satrecomp/tools/check.sh 300
+GAME=blastwind B=build/blastwind DISC="$DISC" sh satrecomp/tools/check.sh 6000 games/blastwind/movies/start.txt
+```
+
 ## Generated code
 
 `work/blastwind/blocks.txt` is the block database (git-ignored and never shipped).

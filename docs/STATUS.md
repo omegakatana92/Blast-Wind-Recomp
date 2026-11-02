@@ -42,9 +42,37 @@ Updated: 2026-11-01 (local build)
 | Speed | 6,000 frames headless, software video | 74.2 s (80.9 fps, 1.35x real time) |
 | Windows package run | path with spaces, CWD `C:\Windows\Temp` | 600 frames, 100% recompiled |
 | Cross-platform hashes | Windows and Linux 600-frame hash logs | identical |
+| Linux checks | `sh satrecomp/tools/check.sh 300` and `... 6000 start.txt` | interpreter == translated; two runs identical |
 | AppImage | extracted, bundled port 600 frames | hashes identical to the native build |
+| AppImage launcher | Xvfb `--screenshot` | disc verified; Play enabled |
+| AppImage `--play` | Xvfb, 25 s | game process started; killed by timeout |
 | CD-DA output correlation | output vs CD source, first 5 s of the opening | 0.774 at 256-sample lag |
 | Backup | auto run, then ranking | 32 KiB file with `BLASTWIND_0`; the record changes after play and is read again |
+
+## Packages built
+
+`dist/Blast-Wind-Windows-x64/` contains `blastwind.exe`, `blastwind-launcher.exe`,
+`SDL3.dll`, `zlib1.dll`, the MinGW runtime DLLs, `LICENSE`,
+`THIRD_PARTY_NOTICES.md`, `LICENSES/`, `FIRST-RUN.txt`, `Play Blast Wind.bat`,
+`README.md`, `STATUS.md` and `TESTING.md`. It contains no disc image, BIOS, save,
+generated C++ or build output. `dist/Blast-Wind-Windows-x64.zip` is the same tree.
+
+- Port SHA-256: `5d2465955557ccb194b2cf3262c785d14c62429a2e7c0d0c64c5c648e3e52da2`
+- Launcher SHA-256: `6cf5bc7c5bb1bfcc60534f95a7cbef0439aadfb6e351d237bb5b27669eb96fbc`
+
+The zip's own SHA-256 is in `dist/SHA256SUMS.txt` beside it (it cannot be inside the
+zip it describes).
+
+The Steam Deck candidate is:
+
+- `dist/Blast-Wind-v0.1.0-SteamDeck-x86_64.AppImage`
+- SHA-256: `c49cf807e8fb2bdfe1c74fd0952cfa4b71ac2661a15397c5ba35ab05f4c34175`
+
+Built on Ubuntu 22.04 (glibc 2.35, GCC 11.4) with static SDL 3.4.16. The binaries'
+highest required glibc symbol is `GLIBC_2.34`; the AppImage bundles `libstdc++`,
+`libgcc_s` and `libz`, and uses the host's glibc, Mesa/graphics drivers and
+X11/Wayland/audio libraries. It is delivered for Steam Deck testing, not called
+verified on the device.
 
 ## Not yet validated
 
