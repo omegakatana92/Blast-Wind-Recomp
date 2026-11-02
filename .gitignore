@@ -22,7 +22,7 @@ settings.ini
 work/
 build/
 dist/
-movies/
+/movies/
 captures/
 *.state
 *.raw

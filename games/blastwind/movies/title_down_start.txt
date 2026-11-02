@@ -1,0 +1,5 @@
+# Blast Wind: title, hold Down and press Start.
+0 0000 0000
+5900 2800 0000
+5930 0800 0000
+5960 0000 0000

@@ -1,0 +1,8 @@
+# Blast Wind: title -> hold Down + Start opens the menu -> choose OPTION.
+0 0000 0000
+5900 2800 0000
+5930 0800 0000
+5960 0000 0000
+6100 2000 0000
+6130 0800 0000
+6160 0000 0000

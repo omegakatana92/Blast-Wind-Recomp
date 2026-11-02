@@ -1,0 +1,5 @@
+# satrecomp input movie: frame pad1 pad2 (pressed bits, hex)
+# Blast Wind: wait for the title, press Start.
+0 0000 0000
+6100 0800 0000
+6130 0000 0000
